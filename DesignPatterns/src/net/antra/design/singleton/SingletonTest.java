@@ -23,9 +23,9 @@ public class SingletonTest {
 //			}
 //		};
 		ExecutorService es = Executors.newFixedThreadPool(40);
-//		for(int i = 0 ; i < 50; i++){
-//			es.submit(r);
-//		}
+		for(int i = 0 ; i < 50; i++){
+			es.submit(r);
+		}
 //		es.shutdown();
 
 		Callable<String> c = ()->{

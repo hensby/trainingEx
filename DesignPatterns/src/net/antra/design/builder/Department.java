@@ -12,6 +12,7 @@ public class Department {
         this.managerName = managerName;
         this.id = id;
     }
+
     public String getName() {
         return name;
     }
