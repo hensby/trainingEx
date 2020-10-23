@@ -8,9 +8,8 @@ public class Product extends Observable {
 	}
 
 	public void producedSomething() {
-		System.out.println("produced somthing");
+		System.out.println("produced something");
 		this.setChanged();
 		this.notifyObservers();
 	}
-
 }

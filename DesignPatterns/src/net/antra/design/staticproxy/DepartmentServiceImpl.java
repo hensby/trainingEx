@@ -6,5 +6,4 @@ public class DepartmentServiceImpl implements DepartmentService {
 	public void saveDept() {
 		System.out.println("Do save department logic.");
 	}
-
 }

@@ -5,8 +5,7 @@ public class Test {
 		Product p = new Product();
 		p.addObserver(new ProductQualityCheck());
 		p.addObserver(new ProductPriceCheck());
-
 		p.producedSomething();
+		System.out.println(p);
 	}
-
 }

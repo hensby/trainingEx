@@ -9,6 +9,6 @@ public class ProductPriceCheck implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		System.out.println("Price Check run");
+		System.out.println("Price Check run " + arg);
 	}
 }

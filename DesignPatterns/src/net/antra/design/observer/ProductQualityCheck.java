@@ -11,6 +11,6 @@ public class ProductQualityCheck implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		System.out.println("Quality Check run");
+		System.out.println("Quality Check run " + arg);
 	}
 }

@@ -10,6 +10,4 @@ public class DepartmentServiceProxy implements DepartmentService{
 		realSubject.saveDept();
 		System.out.println("Do something extra after saving...");
 	}
-	
-
 }
