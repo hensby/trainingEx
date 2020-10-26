@@ -41,7 +41,7 @@ public class PersistenceJPAConfig{
       dataSource.setPassword( "123456" );
       return dataSource;
    }
- 
+
    @Bean
    public PlatformTransactionManager transactionManager(EntityManagerFactory emf){
       JpaTransactionManager transactionManager = new JpaTransactionManager();

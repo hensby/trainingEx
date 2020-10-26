@@ -11,7 +11,7 @@ public class DemoServiceImpl implements DemoService{
 	
 	@Autowired
 	@Qualifier("demoDAOImpl2")
-	DemoDAO aDAO2;
+	DemoDAO aDAO2;   // use interface here
 	
 	@Autowired
 	@Qualifier("demoDAOImpl")
@@ -28,6 +28,4 @@ public class DemoServiceImpl implements DemoService{
 	public DemoDAO getaDAO() {
 		return aDAO;
 	}
-	
-	
 }

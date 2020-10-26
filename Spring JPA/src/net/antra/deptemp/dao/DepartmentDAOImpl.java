@@ -14,7 +14,7 @@ import net.antra.deptemp.entity.Department;
 public class DepartmentDAOImpl implements DepartmentDAO{
 	
 	@PersistenceContext
-	EntityManager em;
+	EntityManager em; // proxy -> entityManagerFactory
 
 	@Override
 	public void save(Department dept) {

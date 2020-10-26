@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Repository // default name = demoDAOImpl 
 public class DemoDAOImpl implements DemoDAO {
 	
-	private String message = "123";
+	private String message = "DemoDAOImpl";
 	
 	public void doSomething(){
 		System.out.println(message);
@@ -20,7 +20,7 @@ public class DemoDAOImpl implements DemoDAO {
 	}
 	@Override
 	public void saveDemo(String a, String b) {
-		System.out.println("In save DEMO");
+		System.out.println("In save DEMO " + a + " " + b + " " + message);
 	}
 	public void test1234() {
 		System.out.println("Inside testmethod");
