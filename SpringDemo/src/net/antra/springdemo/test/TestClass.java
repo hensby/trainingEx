@@ -25,13 +25,13 @@ public class TestClass {
 //		DemoDAO aDAO = (DemoDAO)ac.getBean("demoDAOImpl");
 //		aDAO.test1234();
 
-		DemoService aService = (DemoService)ac.getBean("aService");
-		DemoService bService = (DemoService)ac.getBean("aService");
-		System.out.println(aService == bService); // only create once
-		aService.doSomeThing();
+//		DemoService aService = (DemoService)ac.getBean("aService");
+//		DemoService bService = (DemoService)ac.getBean("aService");
+//		System.out.println(aService == bService); // only create once
+//		aService.doSomeThing();
 
 		ApplicationContext ac2 = new AnnotationConfigApplicationContext(MyConfig.class);
-		DemoDAO aDAO = (DemoDAO)ac2.getBean("DAOImpl2");
+		DemoDAO aDAO = (DemoDAO)ac2.getBean("demoDAOImpl");
 		String s = (String)ac2.getBean("myString");
 		System.out.println(s);
 		aDAO.saveDemo("123","456");
