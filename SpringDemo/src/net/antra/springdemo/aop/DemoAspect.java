@@ -21,23 +21,39 @@ public class DemoAspect {
            System.out.println("Arg: " + signatureArg);
         }
     }
-	@AfterThrowing("execution(* *.test1234*(..))")
+
+    @Before("@annotation(Antra)")
+    public void getName(JoinPoint joinPoint){
+        System.out.println("before save*");
+        Object[] signatureArgs = joinPoint.getArgs();
+        for (Object signatureArg: signatureArgs) {
+            System.out.println("Arg: " + signatureArg);
+        }
+    }
+
+    @AfterThrowing("execution(* *.test1234*(..))")
 	public void afterTh(){
 		System.out.println("AOP for test1234");
 	}
+
 	@After("execution(* *.save*(..))")
-	public void afterMethod(){
+	public void afterMethod(JoinPoint joinPoint){
 		System.out.println("after save*");
 	}
+
 	@Around("execution(* *.save*(..))")
 	public Object employeeAroundAdvice(ProceedingJoinPoint proceedingJoinPoint){
         System.out.println("Before invoking save() method");
         Object value = null;
+//        em.getTx().begin();
         try {
             value = proceedingJoinPoint.proceed();
+            // db function
         } catch (Throwable e) {
+//            em.getTx().rollback();
             e.printStackTrace();
         }
+//        em.getTx().commit();
         System.out.println("After invoking save() method. Return value="+value);
         return value;
     }

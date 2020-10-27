@@ -32,9 +32,13 @@ public class TestClass {
 
 		ApplicationContext ac2 = new AnnotationConfigApplicationContext(MyConfig.class);
 		DemoDAO aDAO = (DemoDAO)ac2.getBean("demoDAOImpl");
-		String s = (String)ac2.getBean("myString");
-		System.out.println(s);
+		DemoService aService = (DemoService)ac2.getBean("aService");
+
+//		String s = (String)ac2.getBean("myString");
+//		System.out.println(s);
 		aDAO.saveDemo("123","456");
+//		aDAO.test1234("sssss");
+//		aService.doSomeThing();
 	}
 
 }

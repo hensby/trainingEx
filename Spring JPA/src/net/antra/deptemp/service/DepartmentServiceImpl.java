@@ -19,7 +19,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 	DepartmentDAO deptDAO;
 
 	@Override
-	@Transactional
+	@Transactional // AOP
 	public void saveDept(Department dept) {
 		if(dept.getStatus() == null){
 			DeptEmpCode status = new DeptEmpCode();

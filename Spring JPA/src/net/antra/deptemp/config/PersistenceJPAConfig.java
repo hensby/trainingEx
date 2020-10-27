@@ -28,17 +28,16 @@ public class PersistenceJPAConfig{
       JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
       em.setJpaVendorAdapter(vendorAdapter);
       em.setJpaProperties(additionalProperties());
- 
       return em;
    }
  
    @Bean
    public DataSource dataSource(){
       DriverManagerDataSource dataSource = new DriverManagerDataSource();
-      dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-      dataSource.setUrl("jdbc:mysql://localhost/dept_emp_proj");
+      dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+      dataSource.setUrl("jdbc:mysql://localhost:3306/dept_emp_proj");
       dataSource.setUsername( "root" );
-      dataSource.setPassword( "123456" );
+      dataSource.setPassword( "19950531" );
       return dataSource;
    }
 
@@ -46,15 +45,14 @@ public class PersistenceJPAConfig{
    public PlatformTransactionManager transactionManager(EntityManagerFactory emf){
       JpaTransactionManager transactionManager = new JpaTransactionManager();
       transactionManager.setEntityManagerFactory(emf);
- 
       return transactionManager;
    }
- 
+
    @Bean
    public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
       return new PersistenceExceptionTranslationPostProcessor();
    }
- 
+
    Properties additionalProperties() {
       Properties properties = new Properties();
     //  properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");

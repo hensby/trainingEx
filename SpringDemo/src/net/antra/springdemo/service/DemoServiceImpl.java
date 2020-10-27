@@ -20,6 +20,7 @@ public class DemoServiceImpl implements DemoService{
 	@Override
 	public void doSomeThing() {
 		aDAO.doSomething();
+		aDAO.test1234("in DAO Impl");
 	}
 //	@Autowired
 //	public DemoServiceImpl(DemoDAO d){

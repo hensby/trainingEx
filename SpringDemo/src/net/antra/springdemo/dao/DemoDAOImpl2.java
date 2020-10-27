@@ -27,7 +27,7 @@ public class DemoDAOImpl2 implements DemoDAO {
 		System.out.println("In save DEMO " + a + " " + b + " " + message);
 	}
 
-	public void test1234() {
+	public void test1234(String str) {
 		System.out.println("Inside testmethod");
 		throw new RuntimeException();
 	}

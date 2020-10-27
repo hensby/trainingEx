@@ -1,5 +1,6 @@
 package net.antra.springdemo.dao;
 
+import net.antra.springdemo.aop.Antra;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
@@ -22,8 +23,10 @@ public class DemoDAOImpl implements DemoDAO {
 	public void saveDemo(String a, String b) {
 		System.out.println("In save DEMO " + a + " " + b + " " + message);
 	}
-	public void test1234() {
-		System.out.println("Inside testmethod");
-		throw new RuntimeException();
+
+	@Antra
+	public void test1234(String str) {
+		System.out.println("Inside test method");
+//		throw new RuntimeException();
 	}
 }
