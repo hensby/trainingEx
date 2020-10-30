@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-default" color-on-scroll="20">
+  <div class="container">
+    <div class="navbar-translate">
+      <a class="navbar-brand" href="javascript:void(0)" rel="tooltip" title="" data-placement="bottom" target="_blank" data-original-title="Antra Movie Rating">
+        <span>ANTRA•</span> Movie Rating System
+      </a>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="navigation" *ngIf="getUsername()">
+      <ul class="navbar-nav">
+        <li class="dropdown nav-item">
+          <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+             <Strong>{{getUsername() | uppercase}}</Strong>  {{'-' + getUserEmail()}}
+          </a>
+          <div class="dropdown-menu dropdown-with-icons">
+            <a href="" class="dropdown-item">
+              <i class="tim-icons icon-image-02"></i>Home Page
+            </a>
+            <a routerLink='/dashboard' class="dropdown-item">
+              <i class="tim-icons icon-bullet-list-67"></i>All My Ratings
+            </a>
+            <a href="javascript:void(0)" class="dropdown-item" (click)="openProfile()">
+              <i class="tim-icons icon-single-02"></i>Profile Page
+            </a>
+            <a routerLink="/admin" class="dropdown-item" *ngIf="currentUser.role.includes('ROLE_ADMIN')">
+              <i class="tim-icons icon-settings-gear-63"></i>Administrator Page
+            </a>
+            <a href="javascript:void(0)" (click)="logout()" class="dropdown-item">
+              <i class="tim-icons icon-paper"></i> Logout
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

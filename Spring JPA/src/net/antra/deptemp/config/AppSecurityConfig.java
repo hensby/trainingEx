@@ -29,5 +29,4 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 	            .and()
 	        .formLogin().loginPage("/login").and().exceptionHandling().accessDeniedPage("/deny");  	
 	}
-
 }

@@ -1,0 +1,74 @@
+<div class="landing-page">
+  <div class="page-header">
+    <img src="../assets/img/blob.png" class="path">
+    <img src="../assets/img/path2.png" class="path2">
+    <img src="../assets/img/triunghiuri.png" class="shapes triangle">
+    <img src="../assets/img/waves.png" class="shapes wave">
+    <img src="../assets/img/cercuri.png" class="shapes circle">
+    <div class="content-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+          </div>
+          <div class="col-md-3">
+            <div class="card card-stats" [ngClass]="cardFocus" (mouseenter)="cardFocus='bg-default'" (mouseleave)="cardFocus=''">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="tim-icons icon-trophy text-warning"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-title">{{totalRating}}
+                      </p><p>
+                    </p><p class="card-category">Ratings</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-9">
+            <div class="pl-md-9">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th scope="col">Title</th>
+                  <th scope="col" *ngFor="let char of movieCharacts">{{char.name}}</th>
+                  <th scope="col">Comments</th>
+                  <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let rate of allRate">
+                  <th scope="row">{{rate.movieTitle}}</th>
+                  <td *ngFor="let score of rate.detailScore">{{score.score}}</td>
+                  <td> {{ (rate.comment.length>50)? (rate.comment | slice:0:50)+'...':(rate.comment) }}</td>
+                  <td><div class="btn-group-sm">
+                    <button type="button" class="btn-sm dropdown-toggle-split btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      More
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="javascript:alert('No way! Did not implement')">Edit</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" (click)="delete(rate)">Delete</a>
+                    </div>
+                  </div></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
