@@ -31,7 +31,7 @@ public class UnitTest_3Parameterized {
 	@Parameters
     public static Collection<Integer[]> addedNumbers() {
         return Arrays.asList(new Integer[][] { { 3, 1, 2 }, { 5, 2, 3 },
-                { 7, 3, 4 }, { 9, 4, 5 } ,{1,1,1}});
+                { 7, 3, 4 }, { 9, 4, 5 } ,{2,1,1}});
     }
 
     @Test

@@ -24,7 +24,6 @@ public class UnitTest_4SpringIntegretionTest {
 	@Autowired
 	DepartmentService deptService;
 	
-	
 	@Test
 	public void testDeptService(){
 		List<Department> list = deptService.loadDeptBasicInfo();
@@ -32,7 +31,7 @@ public class UnitTest_4SpringIntegretionTest {
 		assertTrue(!list.isEmpty());
 	}
 	
-	@Test(expected=Exception.class)
+	@Test(expected=Exception.class, timeout = 10000)
 	public void testDeptServiceSave(){
 		Department dept = new Department();
 		dept.setName("Test_Dept");
